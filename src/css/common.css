@@ -16,3 +16,15 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  max-width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.field .value {
+  display: block;
+  font-size: 300%;
+}
