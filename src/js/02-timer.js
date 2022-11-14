@@ -32,6 +32,7 @@ const fp = flatpickr(myInput, options); // flatpickr
 btnEl.addEventListener('click', startTimer);
 
 function startTimer(event) {
+  Notify.success('Timer is run!');
   intervalId = setInterval(() => {
     let remainingTime = selectedDate - new Date();
 
