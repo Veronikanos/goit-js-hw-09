@@ -9,7 +9,7 @@ buttonStart.addEventListener('click', startChangeColor);
 buttonStop.addEventListener('click', stopChangeColor);
 
 function startChangeColor() {
-  timerId = setInterval(callback, 1000);
+  timerId = setInterval(setColorToBody, 1000);
   changeBtnStatus();
 }
 
@@ -18,12 +18,12 @@ function stopChangeColor() {
   clearInterval(timerId);
 }
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+function setColorToBody() {
+  bodyEl.style.backgroundColor = getRandomHexColor();
 }
 
-function callback() {
-  bodyEl.style.backgroundColor = getRandomHexColor();
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 function changeBtnStatus() {
