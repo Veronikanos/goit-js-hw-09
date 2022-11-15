@@ -8,16 +8,13 @@ buttonStop.disabled = true;
 buttonStart.addEventListener('click', startChangeColor);
 buttonStop.addEventListener('click', stopChangeColor);
 
-function startChangeColor(event) {
+function startChangeColor() {
   timerId = setInterval(callback, 1000);
-
-  buttonStop.disabled = !buttonStop.disabled;
-  buttonStart.disabled = !buttonStart.disabled;
+  changeBtnStatus();
 }
 
-function stopChangeColor(event) {
-  buttonStop.disabled = !buttonStop.disabled;
-  buttonStart.disabled = !buttonStart.disabled;
+function stopChangeColor() {
+  changeBtnStatus();
   clearInterval(timerId);
 }
 
@@ -27,4 +24,9 @@ function getRandomHexColor() {
 
 function callback() {
   bodyEl.style.backgroundColor = getRandomHexColor();
+}
+
+function changeBtnStatus() {
+  buttonStop.disabled = !buttonStop.disabled;
+  buttonStart.disabled = !buttonStart.disabled;
 }
