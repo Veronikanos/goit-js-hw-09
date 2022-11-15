@@ -13,13 +13,13 @@ function onSubmitPromisesHandler(event) {
   let stepDelay = Number(step.value);
   let amountPromises = Number(amount.value);
 
-  for (let i = 0; i < amountPromises; i++) {
+  for (let i = 0; i <= amountPromises; i++) {
     createPromise(i, firstDelay);
     firstDelay += stepDelay;
   }
 }
 
-const createPromise = (position, delay) => {
+function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
 
   return new Promise((resolve, reject) => {
@@ -31,7 +31,7 @@ const createPromise = (position, delay) => {
       }
     }, delay);
   });
-};
+}
 
 createPromise
   .then(({ position, delay }) => {
